@@ -5,6 +5,8 @@
  * Buttons wired between pin and GND; internal pull-ups enabled.
  */
 
+#include <dt-bindings/zmk/matrix_transform.h>
+
 / {
     chosen {
         zmk,kscan = &kscan0;
