@@ -1,0 +1,29 @@
+/*
+ * XIAO nRF52840 2-button mouse shield
+ * D0 (P0.02) = Left click
+ * D1 (P0.03) = Right click
+ * Buttons wired between pin and GND; internal pull-ups enabled.
+ */
+
+/ {
+    chosen {
+        zmk,kscan = &kscan0;
+        zmk,matrix-transform = &default_transform;
+    };
+
+    default_transform: keymap_transform_0 {
+        compatible = "zmk,matrix-transform";
+        columns = <2>;
+        rows = <1>;
+        map = <RC(0,0) RC(0,1)>;
+    };
+
+    kscan0: kscan {
+        compatible = "zmk,kscan-gpio-direct";
+
+        input-gpios
+            = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>   /* D0 - Left click  */
+            , <&gpio0 3 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>   /* D1 - Right click */
+            ;
+    };
+};

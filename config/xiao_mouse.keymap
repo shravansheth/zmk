@@ -1,0 +1,18 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/mouse.h>
+
+/ {
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+            // ------------------
+            // | Left | Right   |
+            // | Click| Click   |
+            // ------------------
+            bindings = <
+                &mkp LCLK   &mkp RCLK
+            >;
+        };
+    };
+};

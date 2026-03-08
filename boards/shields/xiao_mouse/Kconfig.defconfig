@@ -1,0 +1,6 @@
+if SHIELD_XIAO_MOUSE
+
+config ZMK_KEYBOARD_NAME
+	default "XIAO Mouse"
+
+endif # SHIELD_XIAO_MOUSE
